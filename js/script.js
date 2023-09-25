@@ -1,34 +1,38 @@
 const mesa = document.getElementById('mesa');
 
 let cartas = [
-    'red',
-    'black',
-    'blue',
-    'white',
-    'purple',
-    'yellow',
-    'green',
-    'gray'
+    ['red', 'chris'],
+    ['black', 'javascript'],
+    ['blue', 'ifam'],
+    ['Lime', 'faepi'],
+    ['purple', 'sansung'],
+    ['yellow', 'pc'],
+    ['green', 'dev'],
+    ['gray', 'aranoua']
 ];
 
-function adicionaCarta(cor){
+function adicionaCarta(cor, imagem){
     const carta = document.createElement('div');
     carta.className = 'espaco-carta';
     carta.innerHTML = `
         <div class="carta" onclick="virarCarta(event)" tipo="${cor}">
             <div class="carta-back"></div>
-            <div class="carta-front" style="background-color: ${cor}"></div>
+            <div class="carta-front" style="background-color: ${cor} ; background-image: url(../images/${imagem}.png);"></div>
         </div>
     `;
     mesa.appendChild(carta);
 }
 
+
 function criarCartas(){
     var cartasDuplicadas = [...cartas, ...cartas];
     const cartasMisturadas = cartasDuplicadas.sort(() => Math.random() - 0.5);
 
-    cartasMisturadas.forEach(carta => {
-      adicionaCarta(carta);
+    cartasMisturadas.forEach(function(element) {
+      let cor = element[0];
+      let imagem = element[1];
+
+      adicionaCarta(cor, imagem);
     })
 }
 
@@ -46,7 +50,6 @@ function virarCarta(event) {
   } else if (primeiraCarta === '') {
     target.parentNode.classList.add('carta-virada');
     primeiraCarta = target.parentNode;
-    console.log("uma carta esta virada!")
   } else if (segundaCarta === '') {
     target.parentNode.classList.add('carta-virada');
     segundaCarta = target.parentNode;
@@ -58,10 +61,12 @@ function virarCarta(event) {
 
 function verificarPar()
 {
-    if (primeiraCarta.getAttribute('tipo') === segundaCarta.getAttribute('tipo')) 
-    {
-      primeiraCarta.classList.add('carta-com-par');
-      segundaCarta.classList.add('carta-com-par');
+    if (primeiraCarta.getAttribute('tipo') === segundaCarta.getAttribute('tipo')){
+      const cartasViradas = document.querySelectorAll('.carta-virada');
+      cartasViradas.forEach(function(cartaVirada) {
+        cartaVirada.parentNode.classList.add('carta-com-par');
+      });
+
       primeiraCarta = '';
       segundaCarta = '';
       fimdoJogo();
