@@ -15,14 +15,13 @@ function adicionaCarta(cor, imagem){
     const carta = document.createElement('div');
     carta.className = 'espaco-carta';
     carta.innerHTML = `
-        <div class="carta" onclick="virarCarta(event)" tipo="${cor}">
+        <div class="carta" onclick="virarCarta(event)" tipo="${imagem}">
             <div class="carta-back"></div>
             <div class="carta-front" style="background-color: ${cor} ; background-image: url(../images/${imagem}.png);"></div>
         </div>
     `;
     mesa.appendChild(carta);
 }
-
 
 function criarCartas(){
     var cartasDuplicadas = [...cartas, ...cartas];
@@ -35,8 +34,6 @@ function criarCartas(){
       adicionaCarta(cor, imagem);
     })
 }
-
-
 
 let primeiraCarta = '';
 let segundaCarta = '';
