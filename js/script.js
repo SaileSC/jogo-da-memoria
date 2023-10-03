@@ -1,3 +1,4 @@
+// Array de cartas utilizadas no jogo, com a cor de fundo e o nome da imagem
 let cartas = [
     ['red', 'chris'],
     ['black', 'javascript'],
@@ -9,7 +10,7 @@ let cartas = [
     ['gray', 'aranoua']
 ];
 
-
+//Função responsavel pela criação da mesa onde vão ficar as cartas
 function criarMesa(){
   tentativas = 0;
   const mesa = document.createElement('main');
@@ -21,6 +22,7 @@ function criarMesa(){
 }
 
 
+// Essa função vai criando carta a carta
 function adicionaCarta(cor, imagem){
     const carta = document.createElement('div');
     carta.className = 'espaco-carta';
@@ -33,6 +35,8 @@ function adicionaCarta(cor, imagem){
     mesa.appendChild(carta);
 }
 
+
+//Essa função é responsavel por randomizar as cartas, e definir a quantidade passando esses dados para função "adicionarCarta()" criar as cartas.
 function criarCartas(){
     criarMesa()
     var cartasDuplicadas = [...cartas, ...cartas];
@@ -49,9 +53,6 @@ function criarCartas(){
     conteudo.forEach(node =>{
       node.parentNode.removeChild(node)
     })
-
-    mostrarCartas()
-
 }
 
 let primeiraCarta = '';
@@ -59,6 +60,7 @@ let segundaCarta = '';
 let tentativas = 0;
 
 
+//Essa função é responsavel por virar as cartas e carregar as variaveis "primeiraCarta" e "segundaCarta"
 function virarCarta(event) {
   const target = event.target;
 
@@ -76,6 +78,7 @@ function virarCarta(event) {
 }
 
 
+//Apos 2 cartas serem viradas, essa função é reponsavel por verificar se elas são iguais ou não e manter viradas ou desvirar as cartas
 function verificarPar()
 {
     if (primeiraCarta.getAttribute('tipo') === segundaCarta.getAttribute('tipo')){
@@ -99,6 +102,7 @@ function verificarPar()
 }
 
 
+//Essa função faz a verificação de fim de jogo usando o "querySelectorAll" para saber se todas as cartas ja foram viradas
 function fimdoJogo() {
   const cartasViradas = document.querySelectorAll('.carta-virada');
   if (cartasViradas.length === 16) {
@@ -106,7 +110,7 @@ function fimdoJogo() {
   }
 }
 
-
+//Essa função cria uma pequena tela inicial com botão para iniciar o jogo
 function telaPrincipal(){
   const tela = document.createElement('div');
     tela.className = 'telaMensagem';
@@ -125,7 +129,7 @@ function telaPrincipal(){
 }
 
 
-
+//Essa é uma função que vai destruir elementos do jogo ja concluido e chamar a tela inicial novamente.
 function voltaInicio(){
   let main = document.querySelector('main')
   main.parentNode.removeChild(main)
@@ -135,6 +139,7 @@ function voltaInicio(){
 
 
 
+//Função para criar uma tela de finalização com um botão para reiniciar o jogo e mostrar uma mensagem com quantidade de tentativas
 function telaFim(){
   const tela = document.createElement('div');
     tela.className = 'telaMensagem';
@@ -150,20 +155,6 @@ function telaFim(){
     `;
 
     document.body.appendChild(tela);
-}
-
-
-function mostrarCartas() {
-  const todasasCartas = document.querySelectorAll('.carta');
-  todasasCartas.forEach((carta) => {
-    carta.classList.add('carta-virada');
-  })
-
-  setTimeout(() => {
-    todasasCartas.forEach((carta) => {
-      carta.classList.remove('carta-virada');
-    })
-  }, 900);
 }
 
 
