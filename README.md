@@ -19,7 +19,13 @@
 ![Estrutura IF](imgProjeto/if.JPG)
 
     -> função:
-![Estrutura IF](imgProjeto/funcao.JPG)
+![Estrutura function](imgProjeto/funcao.JPG)
+
 
     -> array:
-![Estrutura IF](imgProjeto/array.JPG)
+![Estrutura array](imgProjeto/array.JPG)
+
+
+    -> forEach:
+![Estrutura forEach](imgProjeto/forEach.JPG)
+
