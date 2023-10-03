@@ -1,5 +1,10 @@
 ## Jogo da Memória
 - Jogo desenvolvido para projeto FIC, objetivo era criar um jogo com estruturas estudadas no curso.
+  
+#### Grupo : 
+ - Nome do game : Jogo da Memoria FIC
+ - Resumo : Um jogo bastante conhecido para estimular a memória, implementado usando html, css e js, no js aplicamos estrutuas de condição, funções e variaveis para fazer algo usual.
+- Equipe: David Daniel e Saile Santos
 
 #### Imagens do projeto
     1. Tela Inicial 
