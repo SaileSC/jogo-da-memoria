@@ -45,7 +45,7 @@ function criarCartas(){
       adicionaCarta(cor, imagem);
     })
 
-    const conteudo = document.querySelectorAll('.telaInicio')
+    const conteudo = document.querySelectorAll('.telaMensagem')
     conteudo.forEach(node =>{
       node.parentNode.removeChild(node)
     })
@@ -109,7 +109,7 @@ function fimdoJogo() {
 
 function telaPrincipal(){
   const tela = document.createElement('div');
-    tela.className = 'telaInicio';
+    tela.className = 'telaMensagem';
     tela.innerHTML = `
         <h5>
           JOGO DA MEMÓRIA
@@ -137,7 +137,7 @@ function voltaInicio(){
 
 function telaFim(){
   const tela = document.createElement('div');
-    tela.className = 'telaInicio';
+    tela.className = 'telaMensagem';
     tela.innerHTML = `
         <h5>
           JOGO DA MEMÓRIA

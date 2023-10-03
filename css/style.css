@@ -93,7 +93,7 @@ main:empty{
 
 
 
-.telaInicio{
+.telaMensagem{
     position: absolute;
     background-color: blueviolet;
     width:  500px;
@@ -106,7 +106,7 @@ main:empty{
 }
 
 
-.telaInicio > button{
+.telaMensagem > button{
     position: absolute;
     background-color: rgb(217, 217, 227);
     width: 200px;
@@ -119,19 +119,19 @@ main:empty{
 }
 
 
-.telaInicio > button:hover{
+.telaMensagem > button:hover{
     background-color: brown;
     
 }
 
-.telaInicio > h5 {
+.telaMensagem > h5 {
     font-size: 20px;
     text-align: center;
     margin: 50px;
 }
 
 
-.telaInicio > p {
+.telaMensagem > p {
     font-size: 20px;
     text-align: justify;
     margin: 80px;
