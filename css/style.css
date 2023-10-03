@@ -19,7 +19,7 @@ main {
     width: 55%;
     border-style: solid;
     border-color: blue;
-    background-color: aqua;
+    background-color: rgb(175, 173, 224);
 }
 
 main:empty{
@@ -95,20 +95,20 @@ main:empty{
 
 .telaMensagem{
     position: absolute;
-    background-color: blueviolet;
+    background-color: rgb(148, 188, 136);
     width:  500px;
     height: 500px;
     text-align: center;
     align-items: baseline;
     border-radius: 20px;
     padding: 20px;
-    border: 5px solid rgb(154, 154, 154);
+    border: 5px solid rgb(112, 107, 107);
 }
 
 
 .telaMensagem > button{
     position: absolute;
-    background-color: rgb(217, 217, 227);
+    background-color: rgb(201, 201, 244);
     width: 200px;
     height: 60px;
     left: 29%;
@@ -120,7 +120,7 @@ main:empty{
 
 
 .telaMensagem > button:hover{
-    background-color: brown;
+    background-color: rgb(68, 129, 198);
     
 }
 

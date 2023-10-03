@@ -137,8 +137,6 @@ function voltaInicio(){
   telaPrincipal()
 }
 
-
-
 //Função para criar uma tela de finalização com um botão para reiniciar o jogo e mostrar uma mensagem com quantidade de tentativas
 function telaFim(){
   const tela = document.createElement('div');
@@ -149,7 +147,7 @@ function telaFim(){
         </h5>
 
         <p>
-          Parabens Voce concluil uma partida com ${tentativas} Tentativas
+          Parabéns, você concluiu uma partida com sucesso! <br>Total de tentativas : ${tentativas} 
         </p>
         <button onclick="voltaInicio()"type="button"> TENTAR DE NOVO </button>
     `;
