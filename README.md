@@ -3,12 +3,12 @@
 
 #### Imagens do projeto
     1. Tela Inicial 
-![TelaInicio](imgProjeto/telainicio.JPG)
+![TelaInicio](imgProjeto/telaInicio.JPG)
 
     2. Tela Princial
-![TelaPrincipal](imgProjeto/principal.JPG)
+![TelaPrincipal](imgProjeto/Principal.JPG)
 
-![TelaPrincipal2](imgProjeto/principal2.JPG)
+![TelaPrincipal2](imgProjeto/Principal2.JPG)
 
     3. Tela Fim
 
