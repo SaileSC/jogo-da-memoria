@@ -22,6 +22,11 @@ main {
     background-color: aqua;
 }
 
+main:empty{
+    display: none;
+}
+
+
 .mesa {
     display: flex;
     flex-wrap: wrap;
@@ -84,4 +89,51 @@ main {
 
 .carta-label {
     cursor: pointer;
+}
+
+
+
+.telaInicio{
+    position: absolute;
+    background-color: blueviolet;
+    width:  500px;
+    height: 500px;
+    text-align: center;
+    align-items: baseline;
+    border-radius: 20px;
+    padding: 20px;
+    border: 5px solid rgb(154, 154, 154);
+}
+
+
+.telaInicio > button{
+    position: absolute;
+    background-color: rgb(217, 217, 227);
+    width: 200px;
+    height: 60px;
+    left: 29%;
+    bottom: 40px;
+    border-radius: 10px;
+    border-style: solid ;
+    border-width: 3px;
+}
+
+
+.telaInicio > button:hover{
+    background-color: brown;
+    
+}
+
+.telaInicio > h5 {
+    font-size: 20px;
+    text-align: center;
+    margin: 50px;
+}
+
+
+.telaInicio > p {
+    font-size: 20px;
+    text-align: justify;
+    margin: 80px;
+    font-size: 2opx;
 }

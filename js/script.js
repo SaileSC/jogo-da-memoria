@@ -1,5 +1,3 @@
-const mesa = document.getElementById('mesa');
-
 let cartas = [
     ['red', 'chris'],
     ['black', 'javascript'],
@@ -10,6 +8,18 @@ let cartas = [
     ['green', 'dev'],
     ['gray', 'aranoua']
 ];
+
+
+function criarMesa(){
+  tentativas = 0;
+  const mesa = document.createElement('main');
+  mesa.innerHTML = `
+  <div class="mesa" id="mesa"></div>
+  `;
+
+  document.body.appendChild(mesa);
+}
+
 
 function adicionaCarta(cor, imagem){
     const carta = document.createElement('div');
@@ -24,6 +34,7 @@ function adicionaCarta(cor, imagem){
 }
 
 function criarCartas(){
+    criarMesa()
     var cartasDuplicadas = [...cartas, ...cartas];
     const cartasMisturadas = cartasDuplicadas.sort(() => Math.random() - 0.5);
 
@@ -33,10 +44,19 @@ function criarCartas(){
 
       adicionaCarta(cor, imagem);
     })
+
+    const conteudo = document.querySelectorAll('.telaInicio')
+    conteudo.forEach(node =>{
+      node.parentNode.removeChild(node)
+    })
+
+    mostrarCartas()
+
 }
 
 let primeiraCarta = '';
 let segundaCarta = '';
+let tentativas = 0;
 
 
 function virarCarta(event) {
@@ -50,10 +70,10 @@ function virarCarta(event) {
   } else if (segundaCarta === '') {
     target.parentNode.classList.add('carta-virada');
     segundaCarta = target.parentNode;
+    tentativas += 1;
     verificarPar();
   }
 }
-
 
 
 function verificarPar()
@@ -82,11 +102,73 @@ function verificarPar()
 function fimdoJogo() {
   const cartasViradas = document.querySelectorAll('.carta-virada');
   if (cartasViradas.length === 16) {
-      alert("O jogo terminou");
+    telaFim()
   }
 }
 
-criarCartas();
+
+function telaPrincipal(){
+  const tela = document.createElement('div');
+    tela.className = 'telaInicio';
+    tela.innerHTML = `
+        <h5>
+          JOGO DA MEMÓRIA
+        </h5>
+
+        <p>
+          Jogo da memória criado por alunos do curso FIC como proposta de projeto, Click Iniciar para jogar uma partida...
+        </p>
+        <button onclick="criarCartas()"type="button"> INICIAR </button>
+    `;
+
+    document.body.appendChild(tela);
+}
+
+
+
+function voltaInicio(){
+  let main = document.querySelector('main')
+  main.parentNode.removeChild(main)
+
+  telaPrincipal()
+}
+
+
+
+function telaFim(){
+  const tela = document.createElement('div');
+    tela.className = 'telaInicio';
+    tela.innerHTML = `
+        <h5>
+          JOGO DA MEMÓRIA
+        </h5>
+
+        <p>
+          Parabens Voce concluil uma partida com ${tentativas} Tentativas
+        </p>
+        <button onclick="voltaInicio()"type="button"> TENTAR DE NOVO </button>
+    `;
+
+    document.body.appendChild(tela);
+}
+
+
+function mostrarCartas() {
+  const todasasCartas = document.querySelectorAll('.carta');
+  todasasCartas.forEach((carta) => {
+    carta.classList.add('carta-virada');
+  })
+
+  setTimeout(() => {
+    todasasCartas.forEach((carta) => {
+      carta.classList.remove('carta-virada');
+    })
+  }, 900);
+}
+
+
+
+telaPrincipal()
 
 
 
