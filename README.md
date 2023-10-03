@@ -6,13 +6,13 @@
 ![TelaInicio](imgProjeto/telainicio.JPG)
 
     2. Tela Princial
-![TelaInicio](imgProjeto/principal.JPG)
+![TelaPrincipal](imgProjeto/principal.JPG)
 
-![TelaInicio](imgProjeto/principal2.JPG)
+![TelaPrincipal2](imgProjeto/principal2.JPG)
 
     3. Tela Fim
 
-![TelaInicio](imgProjeto/telaFim.JPG)
+![TelaFinal](imgProjeto/telaFim.JPG)
 
 ### Estruturas presentes no codigo:
     -> if : 
