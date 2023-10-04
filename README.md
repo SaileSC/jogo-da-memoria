@@ -1,7 +1,7 @@
 ## Jogo da Memória
 - Jogo desenvolvido para projeto FIC, objetivo era criar um jogo com estruturas estudadas no curso.
 
-   [Projeto Hospedado Jogo da Memória]([https://link-url-here.org](https://sailesc.github.io/jogo-da-memoria/)) 
+   [Projeto Hospedado Jogo da Memória](https://sailesc.github.io/jogo-da-memoria/)
 
   
 #### Grupo : 
